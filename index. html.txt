@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOMO Detox Kit - THCS Nguyễn Tất Thành</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Quicksand & Comfortaa -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastelBlue: '#A0C4FF',
+                        pastelPurple: '#BDB2FF',
+                        pastelPink: '#FFC6FF',
+                        pastelYellow: '#FDFFB6',
+                        pastelGreen: '#CAFFBF',
+                        pastelOrange: '#FFADAD',
+                        nightNavy: '#1E1E38',
+                        nightCard: '#2A2A4A',
+                        cuteCream: '#FFFDF9'
+                    },
+                    fontFamily: {
+                        sans: ['Quicksand', 'sans-serif'],
+                        display: ['Comfortaa', 'cursive']
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            min-height: 100vh;
+        }
+
+        /* Custom scrollbar cute style */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #BDB2FF;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #A0C4FF;
+        }
+
+        /* Floating mascot animation */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.03); }
+        }
+        .animate-pulse-soft {
+            animation: pulse-soft 3s ease-in-out infinite;
+        }
+
+        /* Custom soft shadows and glassmorphic elements */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 25px -5px rgba(160, 196, 255, 0.4);
+        }
+
+        .glass-card-dark {
+            background: rgba(42, 42, 74, 0.85);
+            backdrop-filter: blur(12px);
+            border: 3px solid rgba(189, 178, 255, 0.2);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .cute-button {
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 0px rgba(0,0,0,0.1);
+        }
+        .cute-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0px rgba(0,0,0,0.12);
+        }
+        .cute-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 0px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="text-slate-700 pb-12">
+
+    <!-- HEADER / NAVIGATION BANNER -->
+    <header class="sticky top-0 z-50 p-4">
+        <div class="max-w-6xl mx-auto glass-card rounded-3xl p-4 flex flex-col md:flex-row items-center justify-between shadow-lg">
+            <!-- Logo & Title -->
+            <div class="flex items-center gap-3 mb-3 md:mb-0">
+                <div class="w-14 h-14 bg-pastelPurple rounded-2xl flex items-center justify-center text-3xl shadow-md animate-float">
+                    🌙
+                </div>
+                <div>
+                    <h1 class="font-display font-bold text-xl md:text-2xl text-purple-900 flex items-center gap-2">
+                        FOMO Detox Kit <span class="text-xs bg-pastelPink text-pink-700 font-bold px-2.5 py-1 rounded-full border border-pink-300">THCS Nguyễn Tất Thành</span>
+                    </h1>
+                    <p class="text-xs text-slate-600 font-medium">Hệ thống số giảm thiểu hội chứng FOMO & Cải thiện giấc ngủ học sinh</p>
+                </div>
+            </div>
+
+            <!-- Author & Info -->
+            <div class="flex items-center gap-2 bg-white/70 px-4 py-2 rounded-2xl border border-purple-100 text-xs text-slate-600">
+                <i class="fa-solid fa-user-astronaut text-purple-500 text-base"></i>
+                <div>
+                    <p class="font-bold text-slate-800">Tác giả: Ngô Gia Linh (8A2)</p>
+                    <p class="text-[11px] text-slate-500">GVHD: THCS Nguyễn Tất Thành - Thái Nguyên</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-6xl mx-auto px-4 mt-4">
+
+        <!-- NAV TABS -->
+        <nav class="flex flex-wrap justify-center gap-2 md:gap-3 mb-6">
+            <button onclick="switchTab('module1')" id="tab-module1" class="tab-btn px-4 py-3 rounded-2xl font-bold text-sm md:text-base flex items-center gap-2 bg-white text-purple-700 shadow-sm border-2 border-purple-200 cute-button">
+                <span>📖</span> 1. Cẩm nang FOMO
+            </button>
+            <button onclick="switchTab('module2')" id="tab-module2" class="tab-btn px-4 py-3 rounded-2xl font-bold text-sm md:text-base flex items-center gap-2 bg-white/80 text-slate-600 border-2 border-transparent hover:bg-white cute-button">
+                <span>📝</span> 2. Trắc nghiệm Tâm lý
+            </button>
+            <button onclick="switchTab('module3')" id="tab-module3" class="tab-btn px-4 py-3 rounded-2xl font-bold text-sm md:text-base flex items-center gap-2 bg-white/80 text-slate-600 border-2 border-transparent hover:bg-white cute-button">
+                <span>🎯</span> 3. Lộ trình Detox
+            </button>
+            <button onclick="switchTab('module4')" id="tab-module4" class="tab-btn px-4 py-3 rounded-2xl font-bold text-sm md:text-base flex items-center gap-2 bg-white/80 text-slate-600 border-2 border-transparent hover:bg-white cute-button">
+                <span>🎧</span> 4. Góc Âm Thanh
+            </button>
+            <button onclick="switchTab('module5')" id="tab-module5" class="tab-btn px-4 py-3 rounded-2xl font-bold text-sm md:text-base flex items-center gap-2 bg-white/80 text-slate-600 border-2 border-transparent hover:bg-white cute-button">
+                <span>⭐</span> 5. Nhật ký & Chia sẻ
+            </button>
+        </nav>
+
+        <!-- MODULE 1: CẨM NANG SỐ & GIẢI MÃ FOMO -->
+        <section id="module1" class="tab-content block">
+            <div class="glass-card rounded-4xl p-6 md:p-8 space-y-8">
+                <!-- Banner Top -->
+                <div class="bg-gradient-to-r from-purple-200 via-pink-200 to-blue-200 p-6 md:p-8 rounded-3xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="z-10">
+                        <span class="bg-purple-600 text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Module 1 • Cẩm Nang Tương Tác</span>
+                        <h2 class="text-2xl md:text-3xl font-display font-bold text-purple-950 mt-2">Giải Mã FOMO, Ánh Sáng Xanh & Thói Quen Số 📱✨</h2>
+                        <p class="text-slate-700 text-sm mt-1 max-w-2xl">Trang bị toàn bộ kiến thức khoa học, phương pháp cai nghiện số hiệu quả và giải mã các tình huống thực tế của học sinh THCS Nguyễn Tất Thành!</p>
+                    </div>
+                    <div class="text-7xl animate-float z-10">🐱‍🚀</div>
+                </div>
+
+                <!-- PHẦN 1: KIẾN THỨC KHOA HỌC & GIẢI MÃ FOMO -->
+                <div>
+                    <h3 class="font-display font-bold text-xl text-purple-900 mb-4 flex items-center gap-2">
+                        <span>🧬</span> Phần 1: Kiến Thức Khoa Học & Cơ Chế FOMO
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Card 1 -->
+                        <div class="bg-white p-6 rounded-3xl border-2 border-blue-100 shadow-sm hover:shadow-md transition">
+                            <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-4">
+                                🙀
+                            </div>
+                            <h4 class="font-display font-bold text-lg text-blue-900 mb-2">FOMO Là Gì?</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                <strong>FOMO (Fear Of Missing Out)</strong> là hội chứng lo âu tâm lý khi bạn luôn sợ người khác đang có trải nghiệm niềm vui, thông tin hot hoặc trend mà mình bị đứng ngoài cuộc.
+                            </p>
+                            <div class="bg-blue-50 p-3 rounded-2xl text-xs text-blue-800 font-medium">
+                                💡 <i>Dẫn đến hành vi lặp đi lặp lại: Liên tục mở điện thoại F5 thông báo từng phút!</i>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="bg-white p-6 rounded-3xl border-2 border-pink-100 shadow-sm hover:shadow-md transition">
+                            <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center text-3xl mb-4">
+                                🎣
+                            </div>
+                            <h4 class="font-display font-bold text-lg text-pink-900 mb-2">Bẫy Dopamine Của MXH</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Các nền tảng như TikTok, Facebook sử dụng thuật toán <strong>"Phần thưởng ngẫu nhiên"</strong>. Mỗi lần lướt thấy video hay hoặc nhận tim/comment, não bộ lại tiết ra Dopamine gây kích thích và gây nghiện.
+                            </p>
+                            <div class="bg-pink-50 p-3 rounded-2xl text-xs text-pink-800 font-medium">
+                                ⚠️ <i>Bạn càng lướt ban đêm, thuật toán càng đề xuất clip thu hút để giữ bạn thức!</i>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="bg-white p-6 rounded-3xl border-2 border-purple-100 shadow-sm hover:shadow-md transition">
+                            <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mb-4">
+                                😴
+                            </div>
+                            <h4 class="font-display font-bold text-lg text-purple-900 mb-2">Ánh Sáng Xanh & Melatonin</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Ánh sáng xanh có bước sóng 450-490nm từ màn hình điện thoại khiến tuyến tùng nhầm lẫn là ban ngày, lập tức ức chế tiết <strong>Melatonin</strong> (hormone ngủ natural).
+                            </p>
+                            <div class="bg-purple-50 p-3 rounded-2xl text-xs text-purple-800 font-medium">
+                                🌙 <i>Hậu quả: Trằn trọc 1-2h mới ngủ được, ngủ không sâu giấc và uể uải vào sáng hôm sau.</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHẦN 2: PHƯƠNG PHÁP THỰC HÀNH DETOX KHOA HỌC -->
+                <div>
+                    <h3 class="font-display font-bold text-xl text-green-900 mb-4 flex items-center gap-2">
+                        <span>🛠️</span> Phần 2: Phương Pháp Thực Hành Detox Khoa Học
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Method 1 -->
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-3xl border-2 border-green-200 space-y-3">
+                            <div class="w-12 h-12 bg-green-200 text-green-800 rounded-2xl flex items-center justify-center font-bold text-xl">
+                                🌅
+                            </div>
+                            <h4 class="font-display font-bold text-green-950 text-lg">Digital Sunset (Hoàng Hôn Số)</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Ngắt hoàn toàn kết nối Wi-Fi/4G và cất điện thoại ngoài phòng ngủ từ <strong>21h30 đêm</strong>. Nhờ đó não bộ có 60-90 phút thả lỏng để sản xuất Melatonin tự nhiên.
+                            </p>
+                        </div>
+
+                        <!-- Method 2 -->
+                        <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-6 rounded-3xl border-2 border-amber-200 space-y-3">
+                            <div class="w-12 h-12 bg-amber-200 text-amber-800 rounded-2xl flex items-center justify-center font-bold text-xl">
+                                👁️
+                            </div>
+                            <h4 class="font-display font-bold text-amber-950 text-lg">Quy Tắc 20 - 20 - 2</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Cứ sau <strong>20 phút</strong> dùng màn hình, hãy nhìn xa <strong>20 feet (6 mét)</strong> trong vòng <strong>20 giây</strong> để bảo vệ mắt và giảm độ căng thẳng thần kinh trước khi ngủ.
+                            </p>
+                        </div>
+
+                        <!-- Method 3 -->
+                        <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-3xl border-2 border-purple-200 space-y-3">
+                            <div class="w-12 h-12 bg-purple-200 text-purple-800 rounded-2xl flex items-center justify-center font-bold text-xl">
+                                📖
+                            </div>
+                            <h4 class="font-display font-bold text-purple-950 text-lg">Phương Pháp Thay Thế Thói Quen</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Thay thế việc lướt TikTok bằng các hành động dễ chịu: <strong>Đọc 5 trang truyện/sách, nghe nhạc sóng não Alpha ở Module 4, hoặc viết 3 điều tích cực vào sổ tay.</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHẦN 3: TÌNH HUỐNG HOẠT HÌNH THỰC TẾ & BÀI HỌC -->
+                <div>
+                    <h3 class="font-display font-bold text-xl text-amber-900 mb-4 flex items-center gap-2">
+                        <span>🎬</span> Phần 3: Góc Tình Huống Hoạt Hình Của Học Sinh THCS
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Situation 1 -->
+                        <div class="bg-white p-6 rounded-3xl border-2 border-amber-100 shadow-sm flex flex-col justify-between space-y-4">
+                            <div>
+                                <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-3 py-1 rounded-full">Tình huống 1 🐻</span>
+                                <h4 class="font-display font-bold text-slate-800 mt-2 text-base">"Sợ Thành Người Lạc Hậu Khi Cả Lớp Bàn Trend Hot"</h4>
+                                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                    <i>"Tối qua lớp mình có drama mới trên Threads. Sáng ra các bạn xúm lại bàn tán xôn xao, mình vì ngủ sớm không hóng kịp nên cảm giác bị 'ra rìa' và lạc hậu..."</i>
+                                </p>
+                            </div>
+                            <div class="bg-amber-50 p-4 rounded-2xl border border-amber-200 text-xs text-amber-900 space-y-1">
+                                <p class="font-bold">💡 Bài học & Lời khuyên tâm lý:</p>
+                                <p>Giá trị bản thân không nằm ở việc hóng tin nhanh hay chậm! Bạn hoàn toàn có thể vui vẻ nhờ bạn kể lại. Giấc ngủ ngon giúp bạn tỉnh táo và tự tin hơn hẳn việc thức đêm săn drama.</p>
+                            </div>
+                        </div>
+
+                        <!-- Situation 2 -->
+                        <div class="bg-white p-6 rounded-3xl border-2 border-pink-100 shadow-sm flex flex-col justify-between space-y-4">
+                            <div>
+                                <span class="bg-pink-100 text-pink-800 text-[11px] font-bold px-3 py-1 rounded-full">Tình huống 2 🐰</span>
+                                <h4 class="font-display font-bold text-slate-800 mt-2 text-base">"Lướt TikTok 'Chỉ 5 Phút' Đến 1 Giờ Sáng"</h4>
+                                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                    <i>"Nằm lên giường lúc 21h30, tự hứa chỉ coi đúng 2 video TikTok rồi ngủ. Ai ngờ cuộn liên tục hết clip này đến clip khác, giật mình nhìn đồng hồ đã 1h15 sáng..."</i>
+                                </p>
+                            </div>
+                            <div class="bg-pink-50 p-4 rounded-2xl border border-pink-200 text-xs text-pink-900 space-y-1">
+                                <p class="font-bold">💡 Bài học & Lời khuyên tâm lý:</p>
+                                <p>Đây chính là bẫy Dopamine! Hãy đặt chế độ Giới Hạn Ứng Dụng (Screen Time) và đưa điện thoại ra khỏi tầm tay trước khi lên giường để cắt đứt sự cám dỗ.</p>
+                            </div>
+                        </div>
+
+                        <!-- Situation 3 -->
+                        <div class="bg-white p-6 rounded-3xl border-2 border-indigo-100 shadow-sm flex flex-col justify-between space-y-4">
+                            <div>
+                                <span class="bg-indigo-100 text-indigo-800 text-[11px] font-bold px-3 py-1 rounded-full">Tình huống 3 🐱</span>
+                                <h4 class="font-display font-bold text-slate-800 mt-2 text-base">"Mệt Mỏi Ngủ Gật Tiết 1 & Bài Kiểm Tra Điểm Thấp"</h4>
+                                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                    <i>"Vì thức khuya lướt mạng, buổi sáng đi học đầu mình đau búa bổ. Trong tiết Toán buổi sáng không thể tập trung, ngủ gật và làm sai hết bài kiểm tra..."</i>
+                                </p>
+                            </div>
+                            <div class="bg-indigo-50 p-4 rounded-2xl border border-indigo-200 text-xs text-indigo-900 space-y-1">
+                                <p class="font-bold">💡 Bài học & Lời khuyên tâm lý:</p>
+                                <p>Thức khuya làm suy giảm 35% khả năng ghi nhớ và tập trung. Hãy ưu tiên giấc ngủ để đạt kết quả học tập tốt hơn và lấy lại tinh thần sảng khoái!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHẦN 4: THÔNG TIN MỞ RỘNG & CHỈ SỐ THỰC CHỨNG -->
+                <div class="bg-slate-900 text-white p-6 md:p-8 rounded-3xl relative overflow-hidden space-y-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <span class="bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full">Phần 4 • Khảo Sát Thực Tế</span>
+                            <h3 class="text-xl md:text-2xl font-bold font-display text-amber-300 mt-2">Số Liệu Khảo Sát Tại THCS Nguyễn Tất Thành (Thái Nguyên)</h3>
+                            <p class="text-slate-300 text-xs mt-1">Nghiên cứu trên 400 học sinh các khối 7, 8, 9 do bạn Ngô Gia Linh (8A2) thực hiện năm 2026</p>
+                        </div>
+                    </div>
+
+                    <!-- Metric Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-slate-800/90 p-4 rounded-2xl border border-amber-400/30 text-center space-y-1">
+                            <div class="text-3xl font-display font-bold text-amber-400">88.5%</div>
+                            <div class="text-[11px] text-slate-300">Học sinh sở hữu/được toàn quyền dùng Smartphone</div>
+                        </div>
+                        <div class="bg-slate-800/90 p-4 rounded-2xl border border-pink-400/30 text-center space-y-1">
+                            <div class="text-3xl font-display font-bold text-pink-400">64.2%</div>
+                            <div class="text-[11px] text-slate-300">Học sinh thường xuyên lướt mạng sau 21h30</div>
+                        </div>
+                        <div class="bg-slate-800/90 p-4 rounded-2xl border border-purple-400/30 text-center space-y-1">
+                            <div class="text-3xl font-display font-bold text-purple-400">58.8%</div>
+                            <div class="text-[11px] text-slate-300">Gặp tình trạng rối loạn giấc ngủ (PSQI &gt; 5)</div>
+                        </div>
+                        <div class="bg-slate-800/90 p-4 rounded-2xl border border-emerald-400/30 text-center space-y-1">
+                            <div class="text-3xl font-display font-bold text-emerald-400">32.5%</div>
+                            <div class="text-[11px] text-slate-300">Học sinh ở mức độ FOMO Cao / Báo động</div>
+                        </div>
+                    </div>
+
+                    <!-- Call To Action -->
+                    <div class="pt-2 text-center">
+                        <button onclick="switchTab('module2')" class="bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-8 py-3.5 rounded-2xl cute-button inline-flex items-center gap-2 text-sm">
+                            <span>Chuyển Sang Module 2: Kiểm Tra Ngay Mức Độ FOMO Của Bạn</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 2: TRẮC NGHIỆM TÂM LÝ & CẢNH BÁO NGUY CƠ -->
+        <section id="module2" class="tab-content hidden">
+            <div class="glass-card rounded-4xl p-6 md:p-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 border-b border-purple-100 pb-4">
+                    <div>
+                        <span class="bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Module 2</span>
+                        <h2 class="text-2xl font-display font-bold text-slate-800 mt-1">Đánh Giá Mức Độ FOMO & Giấc Ngủ (FOMO-S & PSQI) 📝</h2>
+                        <p class="text-slate-500 text-sm">Trả lời 10 câu hỏi để nhận kết quả chẩn đoán và nhãn cảnh báo tức thì!</p>
+                    </div>
+                    <div class="bg-purple-100 text-purple-800 font-bold px-4 py-2 rounded-2xl text-sm flex items-center gap-2">
+                        <span>📊 Tiến độ:</span> <span id="quiz-progress">0/10</span>
+                    </div>
+                </div>
+
+                <!-- Quiz Container -->
+                <div id="quiz-container" class="space-y-6">
+                    <!-- Dynamic Question Box -->
+                    <div id="questions-list" class="space-y-6"></div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center pt-4">
+                        <button onclick="calculateScore()" class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold text-lg px-8 py-4 rounded-3xl shadow-lg hover:shadow-xl cute-button">
+                            ✨ Xem Kết Quả & Chẩn Đoán Ngay ✨
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Diagnostic Result Card (Hidden by default) -->
+                <div id="result-card" class="hidden mt-8 p-6 md:p-8 rounded-3xl transition-all duration-500">
+                    <div class="text-center space-y-4">
+                        <div id="result-icon" class="text-6xl animate-bounce">🟢</div>
+                        <h3 id="result-badge" class="text-2xl font-display font-bold"></h3>
+                        <p id="result-desc" class="text-slate-600 max-w-xl mx-auto text-sm md:text-base leading-relaxed"></p>
+                        
+                        <div class="p-4 bg-white/80 rounded-2xl max-w-md mx-auto text-left space-y-2 border border-slate-200">
+                            <div class="flex justify-between font-bold text-sm">
+                                <span>Chỉ số FOMO Scale:</span>
+                                <span id="fomo-score-text" class="text-purple-600">0 / 50</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                                <div id="fomo-progress-bar" class="h-full bg-purple-500 w-0 transition-all duration-1000"></div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex flex-wrap justify-center gap-4">
+                            <button onclick="applyDetoxPlan()" class="bg-purple-600 text-white font-bold px-6 py-3 rounded-2xl cute-button flex items-center gap-2">
+                                <i class="fa-solid fa-rocket"></i> Kích Hoạt Lộ Trình Detox Khuyên Dùng
+                            </button>
+                            <button onclick="resetQuiz()" class="bg-slate-200 text-slate-700 font-bold px-6 py-3 rounded-2xl cute-button">
+                                🔄 Làm Lại Bài Test
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 3: LỘ TRÌNH DETOX CÁ NHÂN HÓA -->
+        <section id="module3" class="tab-content hidden">
+            <div class="glass-card rounded-4xl p-6 md:p-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                    <div>
+                        <span class="bg-green-600 text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Module 3</span>
+                        <h2 class="text-2xl font-display font-bold text-slate-800 mt-1">Lộ Trình Digital Detox Cá Nhân Hóa 🎯</h2>
+                        <p class="text-slate-500 text-sm">Thiết lập mục tiêu và hoàn thành thử thách mỗi ngày để lấy lại giấc ngủ ngon!</p>
+                    </div>
+                    <!-- Plan Selector -->
+                    <div class="flex bg-slate-200/70 p-1.5 rounded-2xl">
+                        <button id="plan-7-btn" onclick="selectPlan(7)" class="px-4 py-2 rounded-xl text-sm font-bold bg-white text-purple-700 shadow-sm transition">
+                            Lộ Trình 7 Ngày (Vàng)
+                        </button>
+                        <button id="plan-14-btn" onclick="selectPlan(14)" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-slate-900 transition">
+                            Lộ Trình 14 Ngày (Đỏ)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Timer Reminder Box (21h30 Sim) -->
+                <div class="bg-gradient-to-r from-indigo-900 to-purple-900 text-white p-6 rounded-3xl mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="text-4xl">🌙</div>
+                        <div>
+                            <h4 class="font-bold font-display text-lg text-yellow-300">Nhắc Nhở Giờ Đi Ngủ Chuẩn: 21:30</h4>
+                            <p class="text-xs text-indigo-200">Hãy cất điện thoại ngoài phòng ngủ trước 21h30 để não bộ thư giãn hoàn toàn.</p>
+                        </div>
+                    </div>
+                    <div class="text-center bg-white/10 px-6 py-3 rounded-2xl border border-white/20">
+                        <div id="bedtime-clock" class="font-mono text-2xl font-bold text-yellow-300">--:--:--</div>
+                        <span class="text-[10px] text-slate-300">Thời Gian Hiện Tại</span>
+                    </div>
+                </div>
+
+                <!-- Daily Checklist Container -->
+                <div id="detox-days-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Dynamic rendering via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 4: GÓC ÂM THANH THƯ GIÃN chuẩn KHOA HỌC -->
+        <section id="module4" class="tab-content hidden">
+            <div class="glass-card-dark rounded-4xl p-6 md:p-8 text-white">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                    <div>
+                        <span class="bg-pink-500 text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Module 4</span>
+                        <h2 class="text-2xl font-display font-bold text-purple-200 mt-1">Góc Âm Thanh Thư Giãn Sóng Thần Kinh 🎧✨</h2>
+                        <p class="text-slate-300 text-sm">Trị liệu âm thanh khoa học (Alpha, Theta, Pink Noise) xoa dịu thần kinh, dễ đi vào giấc ngủ.</p>
+                    </div>
+                    <!-- Sleep Timer Control -->
+                    <div class="flex items-center gap-2 bg-slate-800/80 px-4 py-2 rounded-2xl border border-purple-500/30">
+                        <i class="fa-solid fa-clock text-pink-400"></i>
+                        <span class="text-xs font-bold text-slate-300">Hẹn giờ tắt:</span>
+                        <select id="sleep-timer-select" onchange="setSleepTimer(this.value)" class="bg-slate-700 text-white text-xs font-bold rounded-lg px-2 py-1 outline-none">
+                            <option value="0">Tắt</option>
+                            <option value="15">15 Phút</option>
+                            <option value="30">30 Phút</option>
+                            <option value="45">45 Phút</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Active Player Status -->
+                <div class="bg-slate-800/60 p-6 rounded-3xl border border-purple-500/30 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div id="player-icon-bg" class="w-16 h-16 bg-purple-600/40 rounded-2xl flex items-center justify-center text-3xl animate-pulse">
+                            🎵
+                        </div>
+                        <div>
+                            <h3 id="current-sound-title" class="font-display font-bold text-xl text-yellow-300">Đang Chọn Âm Thanh...</h3>
+                            <p id="current-sound-desc" class="text-xs text-slate-300">Nhấn nút phát ở dải âm thanh bên dưới để bắt đầu nghe.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button onclick="toggleGlobalAudio()" id="master-play-btn" class="w-14 h-14 bg-pink-500 hover:bg-pink-400 text-white rounded-full flex items-center justify-center text-2xl shadow-lg cute-button">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sound Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Sound 1: Alpha Waves -->
+                    <div class="bg-slate-800/80 p-5 rounded-3xl border border-purple-500/20 hover:border-purple-400 transition text-center space-y-3">
+                        <div class="text-4xl">🧠</div>
+                        <h4 class="font-bold text-purple-200">Sóng Alpha (10Hz)</h4>
+                        <p class="text-[11px] text-slate-400">Giúp thư giãn não bộ, giảm cảm giác lo âu bồn chồn.</p>
+                        <button onclick="playPreset('alpha')" class="w-full bg-purple-600/40 hover:bg-purple-600 text-purple-200 py-2 rounded-xl text-xs font-bold cute-button">
+                            Phát Sóng Alpha
+                        </button>
+                    </div>
+
+                    <!-- Sound 2: Theta Sleep -->
+                    <div class="bg-slate-800/80 p-5 rounded-3xl border border-blue-500/20 hover:border-blue-400 transition text-center space-y-3">
+                        <div class="text-4xl">🌙</div>
+                        <h4 class="font-bold text-blue-200">Sóng Theta (6Hz)</h4>
+                        <p class="text-[11px] text-slate-400">Đưa cơ thể vào trạng thái chuẩn bị ngủ sâu tự nhiên.</p>
+                        <button onclick="playPreset('theta')" class="w-full bg-blue-600/40 hover:bg-blue-600 text-blue-200 py-2 rounded-xl text-xs font-bold cute-button">
+                            Phát Sóng Theta
+                        </button>
+                    </div>
+
+                    <!-- Sound 3: Pink Noise -->
+                    <div class="bg-slate-800/80 p-5 rounded-3xl border border-pink-500/20 hover:border-pink-400 transition text-center space-y-3">
+                        <div class="text-4xl">🌧️</div>
+                        <h4 class="font-bold text-pink-200">Tiếng Mưa Pink Noise</h4>
+                        <p class="text-[11px] text-slate-400">Lấn át tiếng ồn xung quanh, tạo không gian êm dịu.</p>
+                        <button onclick="playPreset('rain')" class="w-full bg-pink-600/40 hover:bg-pink-600 text-pink-200 py-2 rounded-xl text-xs font-bold cute-button">
+                            Phát Tiếng Mưa
+                        </button>
+                    </div>
+
+                    <!-- Sound 4: Zen Lullaby -->
+                    <div class="bg-slate-800/80 p-5 rounded-3xl border border-amber-500/20 hover:border-amber-400 transition text-center space-y-3">
+                        <div class="text-4xl">🎶</div>
+                        <h4 class="font-bold text-amber-200">Nhạc Thiền Nhịp Chậm</h4>
+                        <p class="text-[11px] text-slate-400">Giai điệu êm dịu &lt; 60 BPM xoa dịu nhịp tim.</p>
+                        <button onclick="playPreset('zen')" class="w-full bg-amber-600/40 hover:bg-amber-600 text-amber-200 py-2 rounded-xl text-xs font-bold cute-button">
+                            Phát Nhạc Thiền
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 5: THEO DÕI TIẾN TRÌNH & GÓC CHIA SẺ ẨN DANH -->
+        <section id="module5" class="tab-content hidden">
+            <div class="glass-card rounded-4xl p-6 md:p-8 space-y-8">
+                <!-- Top Progress & Badges -->
+                <div>
+                    <span class="bg-yellow-500 text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Module 5</span>
+                    <h2 class="text-2xl font-display font-bold text-slate-800 mt-1">Chuỗi Ngày Detox & Bộ Huy Hiệu Thành Tích ⭐</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Streak Card -->
+                    <div class="bg-gradient-to-br from-amber-100 to-orange-100 p-6 rounded-3xl border border-amber-200 text-center flex flex-col items-center justify-center space-y-2">
+                        <div class="text-5xl animate-bounce">🔥</div>
+                        <h3 class="font-display font-bold text-3xl text-amber-900" id="streak-count">0 Ngày</h3>
+                        <p class="text-xs text-amber-800 font-medium">Chuỗi Ngày Liên Tiếp Detox Thành Công</p>
+                        <button onclick="incrementStreak()" class="mt-2 bg-amber-500 text-white font-bold px-4 py-2 rounded-xl text-xs cute-button">
+                            ➕ Điểm Danh Hôm Nay
+                        </button>
+                    </div>
+
+                    <!-- Badges Collection -->
+                    <div class="md:col-span-2 bg-white p-6 rounded-3xl border border-slate-200 space-y-4">
+                        <h4 class="font-display font-bold text-slate-800 text-base">Bộ Huy Hiệu Ảo Đã Đạt Được:</h4>
+                        <div class="grid grid-cols-3 gap-3">
+                            <div id="badge-1" class="p-3 rounded-2xl bg-slate-100 text-slate-400 text-center space-y-1 opacity-60">
+                                <div class="text-3xl">🛡️</div>
+                                <div class="font-bold text-xs">Chiến Binh Giấc Ngủ</div>
+                                <div class="text-[10px]">Đạt Streak 3 ngày</div>
+                            </div>
+                            <div id="badge-2" class="p-3 rounded-2xl bg-slate-100 text-slate-400 text-center space-y-1 opacity-60">
+                                <div class="text-3xl">👑</div>
+                                <div class="font-bold text-xs">Bậc Thầy Kiểm Soát</div>
+                                <div class="text-[10px]">Đạt Streak 7 ngày</div>
+                            </div>
+                            <div id="badge-3" class="p-3 rounded-2xl bg-slate-100 text-slate-400 text-center space-y-1 opacity-60">
+                                <div class="text-3xl">🌟</div>
+                                <div class="font-bold text-xs">Ngôi Sao Yên Bình</div>
+                                <div class="text-[10px]">Hoàn thành Bài Test</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anonymous Confession Wall -->
+                <div class="border-t border-slate-200 pt-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-display font-bold text-xl text-slate-800">Góc Chia Sẻ Ẩn Danh 💬</h3>
+                            <p class="text-xs text-slate-500">Nơi học sinh THCS Nguyễn Tất Thành giãi bày tâm sự và truyền cảm hứng Detox!</p>
+                        </div>
+                        <span class="text-xs bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-bold">🔒 An Toàn & Ẩn Danh</span>
+                    </div>
+
+                    <!-- Post Input Form -->
+                    <div class="bg-white p-4 rounded-3xl border border-purple-100 shadow-sm space-y-3">
+                        <textarea id="confession-input" rows="2" placeholder="Chia sẻ cảm nhận hoặc bí quyết cai lướt mạng đêm của bạn..." class="w-full p-3 bg-slate-50 border border-slate-200 rounded-2xl text-sm outline-none focus:border-purple-400 transition"></textarea>
+                        <div class="flex justify-between items-center">
+                            <span class="text-[11px] text-slate-400">🛡️ Tự động lọc từ ngữ tiêu cực</span>
+                            <button onclick="addConfession()" class="bg-purple-600 hover:bg-purple-700 text-white font-bold px-5 py-2 rounded-xl text-xs cute-button flex items-center gap-2">
+                                <span>Gửi Chia Sẻ</span> <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Confession Feed Grid -->
+                    <div id="confessions-feed" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Dynamic Confessions -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="max-w-6xl mx-auto px-4 mt-8 text-center text-slate-600 text-xs space-y-2">
+        <div class="glass-card rounded-2xl p-4">
+            <p class="font-bold text-purple-900">Dự án KHKT 2026 - 2027: "Hệ thống số giảm thiểu hội chứng FOMO trên không gian mạng và cải thiện giấc ngủ cho học sinh THCS Nguyễn Tất Thành"</p>
+            <p class="mt-1">Thực hiện: <strong>Ngô Gia Linh (Lớp 8A2)</strong> - Trường THCS Nguyễn Tất Thành, tỉnh Thái Nguyên</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- DATA & STATE MANAGEMENT ---
+        let currentTab = 'module1';
+        let quizAnswers = Array(10).fill(0);
+        let currentStreak = parseInt(localStorage.getItem('fomo_streak') || '0');
+        let currentPlanDays = 7;
+        let detoxState = JSON.parse(localStorage.getItem('fomo_detox_state') || '{}');
+
+        // Sample Quiz Questions (FOMO-S & Sleep)
+        const questions = [
+            { id: 1, text: "Bạn cảm thấy lo lắng khi thấy bạn bè đăng ảnh đi chơi mà không có mình?" },
+            { id: 2, text: "Bạn có thói quen kiểm tra điện thoại ngay khi vừa thức dậy và trước khi đi ngủ?" },
+            { id: 3, text: "Bạn sợ mình sẽ trở thành 'người lạc hậu' nếu không theo kịp các trend mới trên TikTok/Facebook?" },
+            { id: 4, text: "Bạn thường xuyên lướt điện thoại ban đêm sau 21h30 quá 1 tiếng đồng hồ?" },
+            { id: 5, text: "Bạn cảm thấy bồn chồn, khó chịu nếu điện thoại hết pin hoặc không có kết nối Wifi/4G?" },
+            { id: 6, text: "Bạn hay bị giật mình hoặc trằn trọc mất hơn 30 phút mới đi vào giấc ngủ?" },
+            { id: 7, text: "Buổi sáng đi học bạn thường cảm thấy mệt mỏi, đau đầu hoặc ngủ gật trên lớp?" },
+            { id: 8, text: "Bạn vẫn trả lời tin nhắn/thông báo mạng xã hội kể cả khi đã nằm trên giường ngủ?" },
+            { id: 9, text: "Bạn thấy điểm số hoặc độ tập trung học tập gần đây có dấu hiệu suy giảm do thức khuya?" },
+            { id: 10, text: "Bạn từng muốn ngưng lướt điện thoại ban đêm nhưng không thể tự kiểm soát được?" }
+        ];
+
+        // Sample Anonymous Confessions
+        let confessions = [
+            { id: 1, text: "Từ ngày thử tắt wifi lúc 21:30 và nghe tiếng mưa ở Module 4, mình ngủ ngon hẳn và không còn ngủ gật tiết 1 nữa! Cố lên mọi người ơi 🎉", likes: 12, time: "10 phút trước" },
+            { id: 2, text: "Trước đây mình cứ phải F5 Threads với TikTok tới 1h sáng mới yên tâm ngủ. Giờ đạt streak 5 ngày rồi nè! ✨", likes: 8, time: "45 phút trước" }
+        ];
+
+        // Bad Word Filter List
+        const badWords = ["chửi", "xấu", "ghét", "tệ", "ngu", "bad"];
+
+        // WEB AUDIO API SYNTHESIZER
+        let audioCtx = null;
+        let currentOsc = null;
+        let currentGain = null;
+        let isAudioPlaying = false;
+        let sleepTimerTimeout = null;
+
+        // Initialize App
+        window.onload = function() {
+            renderQuiz();
+            renderDetoxPlan(currentPlanDays);
+            renderConfessions();
+            updateStreakUI();
+            startBedtimeClock();
+        };
+
+        // Navigation Switcher
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-purple-700', 'border-purple-200');
+                btn.classList.add('bg-white/80', 'text-slate-600', 'border-transparent');
+            });
+
+            document.getElementById(tabId).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            activeBtn.classList.remove('bg-white/80', 'text-slate-600', 'border-transparent');
+            activeBtn.classList.add('bg-white', 'text-purple-700', 'border-purple-200');
+            currentTab = tabId;
+        }
+
+        // --- MODULE 2: QUIZ LOGIC ---
+        function renderQuiz() {
+            const container = document.getElementById('questions-list');
+            container.innerHTML = questions.map((q, idx) => `
+                <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm space-y-3">
+                    <p class="font-bold text-slate-800 text-sm md:text-base">
+                        <span class="text-purple-600">Câu ${q.id}:</span> ${q.text}
+                    </p>
+                    <div class="grid grid-cols-5 gap-2 text-center text-xs font-semibold text-slate-600">
+                        ${[1,2,3,4,5].map(val => `
+                            <label class="cursor-pointer">
+                                <input type="radio" name="q_${q.id}" value="${val}" onchange="selectAnswer(${idx}, ${val})" class="peer hidden">
+                                <div class="py-2.5 rounded-xl border border-slate-200 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 transition">
+                                    ${val === 1 ? 'Không bao giờ' : val === 5 ? 'Rất thường xuyên' : val}
+                                </div>
+                            </label>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function selectAnswer(qIdx, val) {
+            quizAnswers[qIdx] = val;
+            const answeredCount = quizAnswers.filter(a => a > 0).length;
+            document.getElementById('quiz-progress').innerText = `${answeredCount}/10`;
+        }
+
+        function calculateScore() {
+            const answeredCount = quizAnswers.filter(a => a > 0).length;
+            if(answeredCount < 10) {
+                alert("Bạn vui lòng trả lời đầy đủ 10 câu hỏi để nhận chẩn đoán chính xác nhé! ✨");
+                return;
+            }
+
+            const totalScore = quizAnswers.reduce((a, b) => a + b, 0);
+            const resultCard = document.getElementById('result-card');
+            const resultIcon = document.getElementById('result-icon');
+            const resultBadge = document.getElementById('result-badge');
+            const resultDesc = document.getElementById('result-desc');
+            const scoreText = document.getElementById('fomo-score-text');
+            const progressBar = document.getElementById('fomo-progress-bar');
+
+            resultCard.classList.remove('hidden');
+            scoreText.innerText = `${totalScore} / 50 Điểm`;
+            progressBar.style.width = `${(totalScore / 50) * 100}%`;
+
+            if(totalScore <= 22) {
+                // Mức Nhẹ (Xanh)
+                resultCard.className = "mt-8 p-6 md:p-8 rounded-3xl bg-emerald-50 border-2 border-emerald-200 text-emerald-950";
+                resultIcon.innerText = "🟢";
+                resultBadge.innerText = "MỨC NGUY CƠ NHẸ (Nhãn Xanh) - Tâm Lý Lành Mạnh";
+                resultDesc.innerText = "Chúc mừng bạn! Bạn kiểm soát tốt thói quen lướt mạng xã hội và có nhịp sinh học giấc ngủ tương đối ổn định. Hãy tiếp tục duy trì thói quen văn minh này nhé!";
+            } else if(totalScore <= 35) {
+                // Mức Trung Bình (Vàng)
+                resultCard.className = "mt-8 p-6 md:p-8 rounded-3xl bg-amber-50 border-2 border-amber-200 text-amber-950";
+                resultIcon.innerText = "🟡";
+                resultBadge.innerText = "MỨC NGUY CƠ TRUNG BÌNH (Nhãn Vàng) - Cần Kích Hoạt Detox 7 Ngày";
+                resultDesc.innerText = "Cảnh báo nhẹ! Bạn đang có dấu hiệu phụ thuộc vào thông báo mạng xã hội và trì hoãn giấc ngủ ban đêm. Nên áp dụng ngay Lộ trình Detox 7 ngày!";
+            } else {
+                // Mức Cao (Đỏ)
+                resultCard.className = "mt-8 p-6 md:p-8 rounded-3xl bg-rose-50 border-2 border-rose-200 text-rose-950";
+                resultIcon.innerText = "🔴";
+                resultBadge.innerText = "MỨC NGUY CƠ CAO (Nhãn Đỏ) - Báo Động FOMO & Trì Hoãn Giấc Ngủ";
+                resultDesc.innerText = "Báo động! Bạn đang mắc phải hội chứng FOMO nặng và rối loạn giấc ngủ nghiêm trọng. Hãy kích hoạt ngay Lộ trình Detox 14 ngày kết hợp nghe âm thanh sóng não trước khi ngủ!";
+            }
+
+            // Unlock badge 3
+            unlockBadge('badge-3');
+            resultCard.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetQuiz() {
+            quizAnswers = Array(10).fill(0);
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            document.getElementById('quiz-progress').innerText = "0/10";
+            document.getElementById('result-card').classList.add('hidden');
+        }
+
+        function applyDetoxPlan() {
+            const totalScore = quizAnswers.reduce((a, b) => a + b, 0);
+            if(totalScore > 35) {
+                selectPlan(14);
+            } else {
+                selectPlan(7);
+            }
+            switchTab('module3');
+        }
+
+        // --- MODULE 3: DETOX ROADMAP LOGIC ---
+        function selectPlan(days) {
+            currentPlanDays = days;
+            document.getElementById('plan-7-btn').className = days === 7 
+                ? "px-4 py-2 rounded-xl text-sm font-bold bg-white text-purple-700 shadow-sm transition"
+                : "px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-slate-900 transition";
+            document.getElementById('plan-14-btn').className = days === 14 
+                ? "px-4 py-2 rounded-xl text-sm font-bold bg-white text-purple-700 shadow-sm transition"
+                : "px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-slate-900 transition";
+            
+            renderDetoxPlan(days);
+        }
+
+        function renderDetoxPlan(days) {
+            const container = document.getElementById('detox-days-container');
+            const tasks = [
+                "Tắt toàn bộ thông báo ứng dụng TikTok/FB sau 21h00",
+                "Để điện thoại xa giường ngủ ít nhất 2 mét",
+                "Đọc 5 trang sách hoặc nghe âm thanh sóng Alpha trước khi ngủ",
+                "Không lướt video ngắn (Reels/Shorts) sau 21h30",
+                "Thay thói quen lướt điện thoại bằng việc viết nhật ký",
+                "Thiết lập chế độ 'Không làm phiền' (Do Not Disturb) trên điện thoại",
+                "Uống 1 ly nước ấm trước khi đi ngủ 30 phút"
+            ];
+
+            let html = "";
+            for(let i = 1; i <= days; i++) {
+                const task = tasks[(i - 1) % tasks.length];
+                const isChecked = detoxState[`day_${days}_${i}`] || false;
+
+                html += `
+                    <div class="bg-white p-4 rounded-3xl border border-slate-100 flex items-center justify-between gap-3 shadow-sm">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 ${isChecked ? 'bg-green-500 text-white' : 'bg-purple-100 text-purple-700'} rounded-2xl flex items-center justify-center font-bold text-sm">
+                                ${isChecked ? '✓' : `N${i}`}
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Ngày ${i}: Detox Thói Quen</h4>
+                                <p class="text-xs text-slate-500">${task}</p>
+                            </div>
+                        </div>
+                        <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleDetoxDay(${days}, ${i})" class="w-5 h-5 accent-purple-600 cursor-pointer">
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+        }
+
+        function toggleDetoxDay(plan, day) {
+            const key = `day_${plan}_${day}`;
+            detoxState[key] = !detoxState[key];
+            localStorage.setItem('fomo_detox_state', JSON.stringify(detoxState));
+            renderDetoxPlan(plan);
+        }
+
+        function startBedtimeClock() {
+            setInterval(() => {
+                const now = new Date();
+                document.getElementById('bedtime-clock').innerText = now.toLocaleTimeString('vi-VN');
+            }, 1000);
+        }
+
+        // --- MODULE 4: WEB AUDIO API SYNTHESIZER ---
+        function initAudioContext() {
+            if(!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function stopAudio() {
+            if(currentOsc) {
+                currentOsc.stop();
+                currentOsc.disconnect();
+                currentOsc = null;
+            }
+            isAudioPlaying = false;
+            document.getElementById('master-play-btn').innerHTML = `<i class="fa-solid fa-play"></i>`;
+            document.getElementById('current-sound-title').innerText = "Đã Dừng Phát Âm Thanh";
+            document.getElementById('current-sound-desc').innerText = "Chọn dải âm thanh để hỗ trợ giấc ngủ.";
+        }
+
+        function playPreset(type) {
+            initAudioContext();
+            stopAudio();
+
+            currentGain = audioCtx.createGain();
+            currentGain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            currentGain.connect(audioCtx.destination);
+
+            if(type === 'alpha') {
+                // Alpha wave synthesizer 10Hz binaural simulation tone
+                currentOsc = audioCtx.createOscillator();
+                currentOsc.type = 'sine';
+                currentOsc.frequency.setValueAtTime(210, audioCtx.currentTime); // Base tone
+                currentOsc.connect(currentGain);
+                currentOsc.start();
+
+                document.getElementById('current-sound-title').innerText = "Đang Phát: Sóng Alpha Thư Giãn (10Hz)";
+                document.getElementById('current-sound-desc').innerText = "Dải tần xoa dịu thần kinh, làm giảm lo âu và căng thẳng.";
+            } else if(type === 'theta') {
+                // Theta wave synthesizer 6Hz simulation tone
+                currentOsc = audioCtx.createOscillator();
+                currentOsc.type = 'triangle';
+                currentOsc.frequency.setValueAtTime(136.1, audioCtx.currentTime); // Om frequency
+                currentOsc.connect(currentGain);
+                currentOsc.start();
+
+                document.getElementById('current-sound-title').innerText = "Đang Phát: Sóng Theta Đi Vào Giấc Ngủ (6Hz)";
+                document.getElementById('current-sound-desc').innerText = "Đưa não bộ vào trạng thái ngủ sâu và hồi phục nhịp sinh học.";
+            } else if(type === 'rain') {
+                // White/Pink noise simulation using buffer
+                const bufferSize = audioCtx.sampleRate * 2;
+                const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                const data = buffer.getChannelData(0);
+                let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+                for (let i = 0; i < bufferSize; i++) {
+                    let white = Math.random() * 2 - 1;
+                    b0 = 0.99886 * b0 + white * 0.0555179;
+                    b1 = 0.99332 * b1 + white * 0.0750759;
+                    b2 = 0.96900 * b2 + white * 0.1538520;
+                    b3 = 0.86650 * b3 + white * 0.3104856;
+                    b4 = 0.55000 * b4 + white * 0.5329522;
+                    b5 = -0.7616 * b5 - white * 0.0168980;
+                    data[i] = b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362;
+                    data[i] *= 0.11; // volume adjust
+                    b6 = white * 0.115926;
+                }
+                const noise = audioCtx.createBufferSource();
+                noise.buffer = buffer;
+                noise.loop = true;
+                noise.connect(currentGain);
+                noise.start();
+                currentOsc = noise;
+
+                document.getElementById('current-sound-title').innerText = "Đang Phát: Tiếng Mưa Thư Giãn (Pink Noise)";
+                document.getElementById('current-sound-desc').innerText = "Tiếng mưa rơi êm dịu giúp lấn át tiếng ồn môi trường.";
+            } else if(type === 'zen') {
+                // Zen Lullaby chord synthesis
+                currentOsc = audioCtx.createOscillator();
+                currentOsc.type = 'sine';
+                currentOsc.frequency.setValueAtTime(174, audioCtx.currentTime); // Solfeggio 174Hz
+                currentOsc.connect(currentGain);
+                currentOsc.start();
+
+                document.getElementById('current-sound-title').innerText = "Đang Phát: Nhạc Thiền Êm Dịu (<60 BPM)";
+                document.getElementById('current-sound-desc').innerText = "Giai điệu chậm rãi xoa dịu nhịp tim trước giờ ngủ.";
+            }
+
+            isAudioPlaying = true;
+            document.getElementById('master-play-btn').innerHTML = `<i class="fa-solid fa-pause"></i>`;
+        }
+
+        function toggleGlobalAudio() {
+            if(isAudioPlaying) {
+                stopAudio();
+            } else {
+                playPreset('alpha');
+            }
+        }
+
+        function setSleepTimer(minutes) {
+            if(sleepTimerTimeout) clearTimeout(sleepTimerTimeout);
+            const mins = parseInt(minutes);
+            if(mins > 0) {
+                sleepTimerTimeout = setTimeout(() => {
+                    stopAudio();
+                    alert(`⏰ Đã hết thời gian hẹn giờ (${mins} phút). Chúc bạn có một giấc ngủ ngon! 🌙`);
+                }, mins * 60 * 1000);
+            }
+        }
+
+        // --- MODULE 5: STREAK & CONFESSION LOGIC ---
+        function updateStreakUI() {
+            document.getElementById('streak-count').innerText = `${currentStreak} Ngày`;
+            if(currentStreak >= 3) unlockBadge('badge-1');
+            if(currentStreak >= 7) unlockBadge('badge-2');
+        }
+
+        function incrementStreak() {
+            currentStreak++;
+            localStorage.setItem('fomo_streak', currentStreak.toString());
+            updateStreakUI();
+        }
+
+        function unlockBadge(badgeId) {
+            const badge = document.getElementById(badgeId);
+            if(badge) {
+                badge.classList.remove('bg-slate-100', 'text-slate-400', 'opacity-60');
+                badge.classList.add('bg-amber-100', 'text-amber-800', 'border', 'border-amber-300');
+            }
+        }
+
+        function renderConfessions() {
+            const feed = document.getElementById('confessions-feed');
+            feed.innerHTML = confessions.map(c => `
+                <div class="bg-white p-4 rounded-3xl border border-slate-100 space-y-2 shadow-sm">
+                    <div class="flex justify-between items-center text-xs text-slate-400">
+                        <span class="font-bold text-purple-600">👤 Học sinh ẩn danh</span>
+                        <span>${c.time}</span>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed">${c.text}</p>
+                    <div class="flex justify-end items-center gap-2 pt-1">
+                        <button onclick="likeConfession(${c.id})" class="text-xs bg-pink-50 hover:bg-pink-100 text-pink-600 font-bold px-3 py-1.5 rounded-xl flex items-center gap-1 transition">
+                            ❤️ <span>${c.likes}</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addConfession() {
+            const input = document.getElementById('confession-input');
+            let text = input.value.trim();
+            if(!text) return;
+
+            // Bad word auto filter
+            badWords.forEach(word => {
+                const reg = new RegExp(word, 'gi');
+                text = text.replace(reg, '***');
+            });
+
+            confessions.unshift({
+                id: Date.now(),
+                text: text,
+                likes: 1,
+                time: "Vừa xong"
+            });
+
+            input.value = "";
+            renderConfessions();
+        }
+
+        function likeConfession(id) {
+            const item = confessions.find(c => c.id === id);
+            if(item) {
+                item.likes++;
+                renderConfessions();
+            }
+        }
+    </script>
+</body>
+</html>
